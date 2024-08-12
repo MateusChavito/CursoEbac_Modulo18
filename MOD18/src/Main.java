@@ -1,6 +1,7 @@
+package com.EBACEXERCICIOTABELA;
 
 public class Main {
-    @Tabela("Clientes") // Define o nome da tabela como "Clientes"
+    @com.EBACEXERCICIOTABELA.Tabela("Clientes") // Define o nome da tabela como "Clientes"
     static class Cliente {
         private String nome;
         private int idade;
@@ -24,11 +25,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
         Class<Cliente> clienteClass = Cliente.class;
 
-        if (clienteClass.isAnnotationPresent(Tabela.class)) {
-            Tabela tabela = clienteClass.getAnnotation(Tabela.class);
 
+        if (clienteClass.isAnnotationPresent(com.EBACEXERCICIOTABELA.Tabela.class)) {
+            com.EBACEXERCICIOTABELA.Tabela tabela = clienteClass.getAnnotation(com.EBACEXERCICIOTABELA.Tabela.class);
 
             String nomeTabela = tabela.value();
 
